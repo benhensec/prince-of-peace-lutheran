@@ -21,8 +21,13 @@ npm run dev
 
 ## GitHub Pages
 
-Live site: https://benhensec.github.io/prince-of-peace-lutheran/
+Live URL (after Pages is switched on): https://benhensec.github.io/prince-of-peace-lutheran/
 
-Push to `main` deploys automatically. The repo is public so Pages can serve it.
+A GitHub Action on `main` builds the static site and publishes the `gh-pages` branch.
 
-To use **www.princeofpeacelutheran.com**, add that custom domain in the repo Settings → Pages after the first deploy, then point DNS at GitHub.
+Turn Pages on once:
+
+1. Open https://github.com/benhensec/prince-of-peace-lutheran/settings/pages
+2. **Source:** Deploy from a branch
+3. **Branch:** `gh-pages` / `/ (root)`
+4. Save
