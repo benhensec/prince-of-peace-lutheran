@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import "tailwindcss";
+
+:root,
+[data-site="damaged"] {
+  --site-bg: #0f0d0c;
+  --site-fg: #f3ece4;
+  --site-muted: #a89888;
+  --site-surface: #1a1614;
+  --site-surface-2: #221c19;
+  --site-accent: #c45c4a;
+  --site-accent-fg: #f8f1ea;
+  --site-ring: #c45c4a;
+  --site-hero-from: rgb(15 13 12 / 0.2);
+  --site-hero-to: rgb(15 13 12 / 0.88);
+  --site-font-display: "Fraunces", "Times New Roman", serif;
+  --site-font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --shadow-border: 0 0 0 1px rgb(255 255 255 / 0.08);
+  --shadow-border-hover: 0 0 0 1px rgb(255 255 255 / 0.14);
+}
+
+[data-site="pop"] {
+  --site-bg: #f3efe4;
+  --site-fg: #1c2428;
+  --site-muted: #5a6a70;
+  --site-surface: #fffcf6;
+  --site-surface-2: #e7efe9;
+  --site-accent: #2f5d62;
+  --site-accent-fg: #f4f0e6;
+  --site-ring: #2f5d62;
+  --site-hero-from: rgb(28 36 40 / 0.15);
+  --site-hero-to: rgb(28 36 40 / 0.62);
+  --site-font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --site-font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --shadow-border:
+    0 0 0 1px rgb(28 36 40 / 0.06),
+    0 1px 2px -1px rgb(28 36 40 / 0.06),
+    0 2px 4px 0 rgb(28 36 40 / 0.04);
+  --shadow-border-hover:
+    0 0 0 1px rgb(28 36 40 / 0.1),
+    0 1px 2px -1px rgb(28 36 40 / 0.08),
+    0 2px 4px 0 rgb(28 36 40 / 0.06);
+}
+
+@theme {
+  --color-bg: var(--site-bg);
+  --color-fg: var(--site-fg);
+  --color-muted: var(--site-muted);
+  --color-surface: var(--site-surface);
+  --color-surface-2: var(--site-surface-2);
+  --color-accent: var(--site-accent);
+  --color-accent-fg: var(--site-accent-fg);
+  --color-border: color-mix(in oklab, var(--site-fg) 14%, transparent);
+  --color-ring: var(--site-ring);
+  --font-sans: var(--site-font-sans);
+  --font-display: var(--site-font-display);
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--site-bg);
+    color: var(--site-fg);
+  }
+
+  body {
+    font-family: var(--site-font-sans);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--site-font-display);
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  img {
+    outline: 1px solid color-mix(in oklab, var(--site-fg) 12%, transparent);
+    outline-offset: -1px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--site-accent) 35%, transparent);
+    color: var(--site-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
