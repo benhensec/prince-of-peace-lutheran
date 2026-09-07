@@ -1,0 +1,61 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAGES: "true"
+      PAGES_BASE: /prince-of-peace-lutheran/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx vite build
+      - name: Prepare static site
+        run: |
+          set -euo pipefail
+          if [ -d dist/client ]; then OUT=dist/client
+          elif [ -d dist ]; then OUT=dist
+          elif [ -d .output/public ]; then OUT=.output/public
+          elif [ -d .vercel/output/static ]; then OUT=.vercel/output/static
+          else
+            echo "Could not find static output directory"
+            ls -la
+            exit 1
+          fi
+          touch "$OUT/.nojekyll"
+          if [ -f "$OUT/index.html" ]; then cp "$OUT/index.html" "$OUT/404.html"; fi
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.OUT }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

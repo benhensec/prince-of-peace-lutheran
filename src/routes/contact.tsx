@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ministry/contact-form";
 import { PageHero } from "@/components/ministry/page-hero";
 import { Section } from "@/components/ministry/section";
 import { pop } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/contact")({ component: PopContact });
 
@@ -14,7 +15,7 @@ function PopContact() {
     <>
       <PageHero
         compact
-        image="/images/pop-coffee.jpg"
+        image={asset("/images/pop-coffee.jpg")}
         kicker="Contact"
         title="Call the office. Write the pastor. Plan a visit."
         body={`${pop.phone} · ${pop.email} · ${pop.officeHours}`}

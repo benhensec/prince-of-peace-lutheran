@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/ministry/page-hero";
 import { Kicker, Section, SectionTitle } from "@/components/ministry/section";
 import { popLinks, popNewsletters } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/news")({ component: NewsPage });
 
@@ -10,7 +11,7 @@ function NewsPage() {
     <>
       <PageHero
         compact
-        image="/images/pop-banner-live.jpg"
+        image={asset("/images/pop-banner-live.jpg")}
         kicker="News"
         title="The monthly paper, and the week’s happenings."
         body="Newsletters, the weekly sheet, and links our parish actually uses. This replaces the empty calendar widget and the ‘Coming Soon’ boxes on the old site."

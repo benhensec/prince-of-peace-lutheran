@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ministry/page-hero";
 import { Kicker, Section, SectionTitle } from "@/components/ministry/section";
 import { Button } from "@/components/ui/button";
 import { pop, popCommittees } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/ministries")({ component: MinistriesPage });
 
@@ -11,7 +12,7 @@ function MinistriesPage() {
     <>
       <PageHero
         compact
-        image="/images/pop-group1.jpg"
+        image={asset("/images/pop-group1.jpg")}
         kicker="Ministries"
         title="Hands, voices, and a narthex full of cans."
         body="Join a ministry. Share skills with Pastor Ben, a council liaison, or the office."

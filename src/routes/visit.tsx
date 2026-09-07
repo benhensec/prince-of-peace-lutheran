@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ministry/page-hero";
 import { Kicker, Section, SectionTitle } from "@/components/ministry/section";
 import { Button } from "@/components/ui/button";
 import { pop, popPhotos } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/visit")({ component: VisitPage });
 
@@ -14,7 +15,7 @@ function VisitPage() {
     <>
       <PageHero
         compact
-        image="/images/pop-hero-live.png"
+        image={asset("/images/pop-hero-live.png")}
         kicker="Visit"
         title="One block from the Atlantic."
         body="2600 Atlantic Avenue, Fernandina Beach. Park on site. Come as you are."

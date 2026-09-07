@@ -18,3 +18,11 @@ Edit [`src/content/pop.ts`](src/content/pop.ts). Newsletters and bulletins live 
 npm install
 npm run dev
 ```
+
+## GitHub Pages
+
+Live site: https://benhensec.github.io/prince-of-peace-lutheran/
+
+Push to `main` deploys automatically. The repo is public so Pages can serve it.
+
+To use **www.princeofpeacelutheran.com**, add that custom domain in the repo Settings → Pages after the first deploy, then point DNS at GitHub.

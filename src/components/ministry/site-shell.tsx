@@ -19,6 +19,7 @@ import { DamagedMark, PeaceMark } from "@/components/ministry/marks";
 import type { NavItem } from "@/content/types";
 import { contentFromPath, isActivePath } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 
 const ICONS: Record<NavItem["icon"], typeof Home> = {
   home: Home,
@@ -175,7 +176,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 className="mt-5 inline-flex items-center gap-3"
               >
                 <img
-                  src="/images/elca-logo.png"
+                  src={asset("/images/elca-logo.png")}
                   alt="Evangelical Lutheran Church in America"
                   className="size-12 rounded-md object-cover"
                   crossOrigin="anonymous"

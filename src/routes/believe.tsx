@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ministry/page-hero";
 import { Kicker, Section, SectionTitle } from "@/components/ministry/section";
 import { Button } from "@/components/ui/button";
 import { pop, popCoreBeliefs } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/believe")({ component: BelievePage });
 
@@ -11,7 +12,7 @@ function BelievePage() {
     <>
       <PageHero
         compact
-        image="/images/pop-cross.jpg"
+        image={asset("/images/pop-cross.jpg")}
         kicker="What we believe"
         title="What comes into our minds when we think about God is the most important thing about us."
         body="A.W. Tozer. The core beliefs of Prince of Peace are rooted in Scripture — and in the Lutheran confession of Word and sacrament."

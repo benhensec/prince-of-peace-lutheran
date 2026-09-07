@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ministry/contact-form";
 import { PageHero } from "@/components/ministry/page-hero";
 import { Section } from "@/components/ministry/section";
 import { pop } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/prayer")({ component: PrayerPage });
 
@@ -11,7 +12,7 @@ function PrayerPage() {
     <>
       <PageHero
         compact
-        image="/images/pop-cross.jpg"
+        image={asset("/images/pop-cross.jpg")}
         kicker="Prayer request"
         title="We would be honored to pray with you."
         body="The prayer team holds requests for the congregation and the community. Names are not published on this website."

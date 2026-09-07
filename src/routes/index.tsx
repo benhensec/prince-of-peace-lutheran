@@ -4,6 +4,7 @@ import { Kicker, Section, SectionTitle } from "@/components/ministry/section";
 import { Button } from "@/components/ui/button";
 import { pop, popMissionNow, popPhotos } from "@/content/pop";
 import { formatDate } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/")({ component: PopHome });
 
@@ -47,7 +48,7 @@ function PopHome() {
 
       <section className="relative overflow-hidden">
         <img
-          src="/images/pop-mission.jpg"
+          src={asset("/images/pop-mission.jpg")}
           alt=""
           className="absolute inset-0 size-full object-cover"
           crossOrigin="anonymous"

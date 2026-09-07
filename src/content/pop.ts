@@ -1,6 +1,7 @@
 import type { Belief, SiteContent } from "./types";
+import { withPublicBase } from "@/lib/asset";
 
-export const pop: SiteContent = {
+export const pop: SiteContent = withPublicBase({
   id: "pop",
   name: "Prince of Peace Lutheran Church",
   shortName: "Prince of Peace",
@@ -340,7 +341,7 @@ If you are visiting Fernandina Beach, come in person. We are one block from the 
     to: "https://github.com/benhensec/damaged-christian-ministry",
     hint: "A teaching, podcast, and book ministry for wounded disciples — born on this same First Coast.",
   },
-};
+});
 
 export const popMotto = "Come… be a part of peace.";
 
@@ -398,7 +399,7 @@ export const popLessons = [
   },
 ];
 
-export const popBulletins = [
+export const popBulletins = withPublicBase([
   {
     title: "September 6, 2026 · Sunday after Pentecost",
     href: "/files/pop/Bulletin-2026-09-06.pdf",
@@ -411,7 +412,7 @@ export const popBulletins = [
     title: "Take Faith Home · August 30",
     href: "/files/pop/Take-Faith-Home-2026-08-30.pdf",
   },
-];
+]);
 
 export const popLivestreams = [
   { title: "Recent Sunday livestream", href: "https://www.facebook.com/share/v/1Ej7JGjhRK/" },
@@ -419,7 +420,7 @@ export const popLivestreams = [
   { title: "Sunday worship recording", href: "https://www.facebook.com/share/v/1bcd6XA7jn/" },
 ];
 
-export const popNewsletters = [
+export const popNewsletters = withPublicBase([
   {
     title: "Prince of Peace News · September 2026",
     href: "/files/pop/Newsletter-September-2026.pdf",
@@ -445,7 +446,7 @@ export const popNewsletters = [
     href: "/files/pop/Happenings-Week-of-Aug-31.pdf",
     note: "The weekly sheet — times, tasks, and the Sunday to come.",
   },
-];
+]);
 
 export const popLinks = [
   { name: "Barnabas Center", href: "https://www.barnabasnassau.org", note: "Neighbors in crisis, food pantry, and health in Nassau County." },
@@ -489,11 +490,11 @@ export const popMissionNow = {
   body: "In Nassau County, food insecurity touches 1 in 4 children and 1 in 6 adults. Join our two-month mission with the ELCA synod’s God’s Work. Our Hands. Sunday. Bring canned goods to the narthex every Sunday. No one should have to wonder about the next meal.",
 };
 
-export const popPhotos = [
+export const popPhotos = withPublicBase([
   { src: "/images/pop-worship-live.jpg", alt: "Sunday worship at Prince of Peace" },
   { src: "/images/pop-group1.jpg", alt: "Congregation life at Prince of Peace" },
   { src: "/images/pop-group2.jpg", alt: "Fellowship at Prince of Peace" },
   { src: "/images/pop-group3.jpg", alt: "Ministry groups at Prince of Peace" },
   { src: "/images/pop-mission.jpg", alt: "Monthly mission at Prince of Peace" },
   { src: "/images/pop-staff-les.jpg", alt: "Life together at Prince of Peace" },
-];
+]);

@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ministry/page-hero";
 import { Kicker, Section, SectionTitle } from "@/components/ministry/section";
 import { Button } from "@/components/ui/button";
 import { pop, popCouncil } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/about")({ component: PopAbout });
 
@@ -11,7 +12,7 @@ function PopAbout() {
     <>
       <PageHero
         compact
-        image="/images/pop-coast.jpg"
+        image={asset("/images/pop-coast.jpg")}
         kicker="About"
         title="Come… be a part of peace."
         body={pop.mission}

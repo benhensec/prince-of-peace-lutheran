@@ -2,6 +2,7 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteShell } from "@/components/ministry/site-shell";
+import { asset } from "@/lib/asset";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -18,10 +19,10 @@ export const Route = createRootRoute({
       },
     ],
     links: [
-      { rel: "icon", type: "image/jpeg", href: "/favicon-pop.jpg" },
+      { rel: "icon", type: "image/jpeg", href: asset("/favicon-pop.jpg") },
       { rel: "stylesheet", href: appCss },
-      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+      { rel: "manifest", href: asset("/__grok/manifest.webmanifest") },
+      { rel: "apple-touch-icon", href: asset("/__grok/icon-180.png") },
     ],
   }),
   component: RootDocument,

@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
@@ -20,7 +21,7 @@ export function PageHero({
     <section className={cn("relative overflow-hidden", compact ? "min-h-[42vh]" : "min-h-[78vh]")}>
       {image ? (
         <img
-          src={image}
+          src={asset(image)}
           alt=""
           className="absolute inset-0 size-full object-cover object-center"
           crossOrigin="anonymous"

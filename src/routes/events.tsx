@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ministry/page-hero";
 import { Section } from "@/components/ministry/section";
 import { pop } from "@/content/pop";
 import { formatDate } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/events")({ component: EventsPage });
 
@@ -11,7 +12,7 @@ function EventsPage() {
     <>
       <PageHero
         compact
-        image="/images/pop-group2.jpg"
+        image={asset("/images/pop-group2.jpg")}
         kicker="Events calendar"
         title="The weeks ahead."
         body="Sunday school, worship, Back-to-Church Sunday, choir, bells, confirmation, and the monthly mission. Call the office if you need a ride."

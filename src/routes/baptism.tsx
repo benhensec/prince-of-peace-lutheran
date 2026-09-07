@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ContactForm } from "@/components/ministry/contact-form";
 import { PageHero } from "@/components/ministry/page-hero";
 import { Section } from "@/components/ministry/section";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/baptism")({ component: BaptismPage });
 
@@ -10,7 +11,7 @@ function BaptismPage() {
     <>
       <PageHero
         compact
-        image="/images/pop-communion.jpg"
+        image={asset("/images/pop-communion.jpg")}
         kicker="Baptism"
         title="Washed and named."
         body="The Bible says that all professing Christians should be baptized (Matthew 28:18–20). As Lutherans we also baptize infants — God meets us before we can answer back."

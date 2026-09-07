@@ -4,6 +4,7 @@ import { PageHero } from "@/components/ministry/page-hero";
 import { Section } from "@/components/ministry/section";
 import { Button } from "@/components/ui/button";
 import { pop } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/give")({ component: PopGive });
 
@@ -12,7 +13,7 @@ function PopGive() {
     <>
       <PageHero
         compact
-        image="/images/pop-communion.jpg"
+        image={asset("/images/pop-communion.jpg")}
         kicker="Give"
         title="For where your treasure is, there your heart will be also."
         body={pop.givingNote}

@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ministry/page-hero";
 import { Kicker, Section, SectionTitle } from "@/components/ministry/section";
 import { Button } from "@/components/ui/button";
 import { pop, popBulletins, popLessons, popLivestreams } from "@/content/pop";
+import { asset } from "@/lib/asset";
 
 export const Route = createFileRoute("/worship")({ component: WorshipPage });
 
@@ -11,7 +12,7 @@ function WorshipPage() {
     <>
       <PageHero
         compact
-        image="/images/pop-worship-live.jpg"
+        image={asset("/images/pop-worship-live.jpg")}
         kicker="Worship"
         title="Word, table, and song."
         body="Share God’s love in person — or via livestream from a computer or phone. Holy Communion every Sunday. You do not need to be Lutheran to come."
